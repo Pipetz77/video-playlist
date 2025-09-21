@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Playlist</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; background: #111; color: white;">
+
+  <h1>🎬 Minha Playlist</h1>
+  <iframe id="player" width="800" height="450" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <script>
+    // Substitua pelos links dos seus vídeos
+    const videos = [
+      "https://www.youtube.com/embed/VIDEO_ID_1?autoplay=1&enablejsapi=1",
+      "https://www.youtube.com/embed/VIDEO_ID_2?autoplay=1&enablejsapi=1",
+      "https://www.youtube.com/embed/VIDEO_ID_3?autoplay=1&enablejsapi=1"
+    ];
+
+    let index = 0;
+    const player = document.getElementById("player");
+
+    function playNext() {
+      player.src = videos[index];
+      index = (index + 1) % videos.length;
+    }
+
+    // O YouTube não dispara "ended" direto no iframe, então usamos API oficial
+    window.onYouTubeIframeAPIReady = function() {
+      new YT.Player("player", {
+        events: {
+          'onStateChange': function(e) {
+            if (e.data === YT.PlayerState.ENDED) {
+              playNext();
+            }
+          }
+        }
+      });
+    };
+
+    // Carrega a API do YouTube
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+
+    // Inicia
+    playNext();
+  </script>
+
+</body>
+</html>
