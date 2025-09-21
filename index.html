@@ -10,42 +10,24 @@
   <iframe id="player" width="800" height="450" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
   <script>
-    // Substitua pelos links dos seus vídeos
+    // Coloque aqui os links dos seus vídeos (como strings, não como <iframe>)
     const videos = [
-      <iframe name=Player "" src="//%72%65%64%65%63%61%6E%61%69%73%2E%73%68/player3/server.php?server=RCServer09&subfolder=ondemand&vid=CMEUCNHCSMT01EP01" frameborder=0 height=400 scrolling=no width=640 allow="encrypted-media" allowFullScreen> </iframe>,
-      <iframe name=Player "" src="//%72%65%64%65%63%61%6E%61%69%73%2E%73%68/player3/server.php?server=RCServer09&subfolder=ondemand&vid=CMEUCNHCSMT01EP02" frameborder=0 height=400 scrolling=no width=640 allow="encrypted-media" allowFullScreen> </iframe>,
-      <iframe name=Player "" src="//%72%65%64%65%63%61%6E%61%69%73%2E%73%68/player3/server.php?server=RCServer09&subfolder=ondemand&vid=CMEUCNHCSMT01EP03" frameborder=0 height=400 scrolling=no width=640 allow="encrypted-media" allowFullScreen> </iframe>
+      "//redcanais.sh/player3/server.php?server=RCServer09&subfolder=ondemand&vid=CMEUCNHCSMT01EP01",
+      "//redcanais.sh/player3/server.php?server=RCServer09&subfolder=ondemand&vid=CMEUCNHCSMT01EP02",
+      "//redcanais.sh/player3/server.php?server=RCServer09&subfolder=ondemand&vid=CMEUCNHCSMT01EP03"
     ];
 
     let index = 0;
     const player = document.getElementById("player");
+    const tempoTroca = 1380 * 1000; // 30 segundos
 
     function playNext() {
       player.src = videos[index];
       index = (index + 1) % videos.length;
+      setTimeout(playNext, tempoTroca); // Troca após o tempo definido
     }
 
-    // O YouTube não dispara "ended" direto no iframe, então usamos API oficial
-    window.onYouTubeIframeAPIReady = function() {
-      new YT.Player("player", {
-        events: {
-          'onStateChange': function(e) {
-            if (e.data === YT.PlayerState.ENDED) {
-              playNext();
-            }
-          }
-        }
-      });
-    };
-
-    // Carrega a API do YouTube
-    const tag = document.createElement("script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.body.appendChild(tag);
-
-    // Inicia
     playNext();
   </script>
-
 </body>
 </html>
