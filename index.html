@@ -7,117 +7,39 @@
 <body style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; background: #111; color: white;">
 
   <h1>🎬 Minha Playlist</h1>
-  <iframe id="player" width="800" height="450" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <video id="player" width="800" height="450" controls autoplay></video>
 
   <script>
-    // Coloque aqui os links dos seus vídeos (como strings, não como <iframe>)
+    // Coloque aqui os links dos seus vídeos (como strings)
     const videos = [
-      <div data-role="commentContent" class="ipsType_normal ipsType_richText ipsPadding_bottom ipsContained" data-controller="core.front.core.lightboxedImages">
-			
-<p>
-	Se Puder, Deixe o Seu like, em breve trarei o resto das temporadas
-</p>
-
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386199" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/1-OParadigmadoPeixePodre.mp4.13e366100e04fdc73adf80c10fbbf8e6.mp4" id="ips_uid_8348_4">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/1-OParadigmadoPeixePodre.mp4.13e366100e04fdc73adf80c10fbbf8e6.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/1-OParadigmadoPeixePodre.mp4.13e366100e04fdc73adf80c10fbbf8e6.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386199&amp;key=78239d0a95f515be43fd9646c188eb91">1 - O Paradigma do Peixe Podre.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386200" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/2-ATopologiadoAlapo.mp4.995004073d06923360d6c28792376f6d.mp4" id="ips_uid_8348_6">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/2-ATopologiadoAlapo.mp4.995004073d06923360d6c28792376f6d.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/2-ATopologiadoAlapo.mp4.995004073d06923360d6c28792376f6d.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386200&amp;key=e8d6c74d883cee87f517b723260d697c">2 - A Topologia do Alçapão.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386201" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/3-ASublimaoBrbara.mp4.42f71f55f3d5908a5aa3d939b249b5a8.mp4" id="ips_uid_8348_7">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/3-ASublimaoBrbara.mp4.42f71f55f3d5908a5aa3d939b249b5a8.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/3-ASublimaoBrbara.mp4.42f71f55f3d5908a5aa3d939b249b5a8.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386201&amp;key=b94bb1942fb13d9b983a233cf84ab10a">3 - A Sublimação Bárbara.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386202" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/4-AEquivalnciadoGrifo.mp4.95243237038736cf705f5505afb3cbdb.mp4" id="ips_uid_8348_10">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/4-AEquivalnciadoGrifo.mp4.95243237038736cf705f5505afb3cbdb.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/4-AEquivalnciadoGrifo.mp4.95243237038736cf705f5505afb3cbdb.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386202&amp;key=bed80b8f7978eddaba171340b7053750">4 - A Equivalência do Grifo.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386203" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/5-AAlternativaEuclidiana.mp4.068a7964ad7fe1a70e8220a7150ad64c.mp4" id="ips_uid_8348_11">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/5-AAlternativaEuclidiana.mp4.068a7964ad7fe1a70e8220a7150ad64c.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/5-AAlternativaEuclidiana.mp4.068a7964ad7fe1a70e8220a7150ad64c.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386203&amp;key=a99a3da461295615a98e3825337c792e">5 - A Alternativa Euclidiana.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386204" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/6-OTeoremaCooper-Nowitzki.mp4.a41e19b5f90071411672d283f4d6149f.mp4" id="ips_uid_8348_12">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/6-OTeoremaCooper-Nowitzki.mp4.a41e19b5f90071411672d283f4d6149f.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/6-OTeoremaCooper-Nowitzki.mp4.a41e19b5f90071411672d283f4d6149f.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386204&amp;key=f1e6a788b12477640609e62dd30fde44">6 - O Teorema Cooper-Nowitzki.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386205" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/7-APolarizaodaPescariadeSuti.mp4.437136a372b83cb15c46919c2ced1953.mp4" id="ips_uid_8348_13">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/7-APolarizaodaPescariadeSuti.mp4.437136a372b83cb15c46919c2ced1953.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/7-APolarizaodaPescariadeSuti.mp4.437136a372b83cb15c46919c2ced1953.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386205&amp;key=594424eaf02560ad99f86211b5e73a8b">7 - A Polarização da Pescaria de Sutiã.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386206" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/8-AExpansodoLagarto-Spock.mp4.34010c538cba2edfd1a5a54ea7601612.mp4" id="ips_uid_8348_14">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/8-AExpansodoLagarto-Spock.mp4.34010c538cba2edfd1a5a54ea7601612.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/8-AExpansodoLagarto-Spock.mp4.34010c538cba2edfd1a5a54ea7601612.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386206&amp;key=d709c0b014c411363efc30ba96cd16a6">8 - A Expansão do Lagarto-Spock.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386207" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/9-ATriangulaodoAspargoBranco.mp4.3afdba87ca26466741688ffcb2e9ce72.mp4" id="ips_uid_8348_15">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/9-ATriangulaodoAspargoBranco.mp4.3afdba87ca26466741688ffcb2e9ce72.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/9-ATriangulaodoAspargoBranco.mp4.3afdba87ca26466741688ffcb2e9ce72.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386207&amp;key=b63344ba2d1afa8d6f6f0b2cb23623e9">9 - A Triangulação do Aspargo Branco.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386208" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/10-OEnigmadeVartabedian.mp4.3936df04377e1f1d2a00b13352656a01.mp4" id="ips_uid_8348_16">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/10-OEnigmadeVartabedian.mp4.3936df04377e1f1d2a00b13352656a01.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/10-OEnigmadeVartabedian.mp4.3936df04377e1f1d2a00b13352656a01.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386208&amp;key=769a9d6e9d4d11c9a212b0b754319993">10 - O Enigma de Vartabedian.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386209" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/11-AHiptesedoKitdeBanhocomoPresente.mp4.77e7e31850a1d4701d0bf81147f9a0f8.mp4" id="ips_uid_8348_17">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/11-AHiptesedoKitdeBanhocomoPresente.mp4.77e7e31850a1d4701d0bf81147f9a0f8.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/11-AHiptesedoKitdeBanhocomoPresente.mp4.77e7e31850a1d4701d0bf81147f9a0f8.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386209&amp;key=dce1d63ea138fa9d63c4edd414efd753">11 - A Hipótese do Kit de Banho como Presente.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386210" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/12-AInstabilidadedoRobAssassino.mp4.55cf9c5da36f2a2dc3b9fb9322eb974e.mp4" id="ips_uid_8348_18">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/12-AInstabilidadedoRobAssassino.mp4.55cf9c5da36f2a2dc3b9fb9322eb974e.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/12-AInstabilidadedoRobAssassino.mp4.55cf9c5da36f2a2dc3b9fb9322eb974e.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386210&amp;key=a92ec082ef0ed81577eb7b68467fc2bf">12 - A Instabilidade do Robô Assassino.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386211" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/13-OAlgoritmodaAmizade.mp4.cacb327bf17bce9a82d251d9e8d1f547.mp4" id="ips_uid_8348_28">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/13-OAlgoritmodaAmizade.mp4.cacb327bf17bce9a82d251d9e8d1f547.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/13-OAlgoritmodaAmizade.mp4.cacb327bf17bce9a82d251d9e8d1f547.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386211&amp;key=aeeb6e336955347bd1fb417416e0bbc8">13 - O Algoritmo da Amizade.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386212" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/14-APermeabilidadeFinanceira.mp4.fb5719dded990ece2663733f2fa6b3da.mp4" id="ips_uid_8348_29">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/14-APermeabilidadeFinanceira.mp4.fb5719dded990ece2663733f2fa6b3da.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/14-APermeabilidadeFinanceira.mp4.fb5719dded990ece2663733f2fa6b3da.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386212&amp;key=cae13b4d8062366c6959f6826d46e730">14 - A Permeabilidade Financeira.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386213" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/15-ACapacitnciaMaternal.mp4.786e885799bef556b7777d77dae017f2.mp4" id="ips_uid_8348_19">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/15-ACapacitnciaMaternal.mp4.786e885799bef556b7777d77dae017f2.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/15-ACapacitnciaMaternal.mp4.786e885799bef556b7777d77dae017f2.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386213&amp;key=530da623a33f82002648091f2153cf01">15 - A Capacitância Maternal.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386214" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/16-ASaturaodaAlmofada.mp4.5b452a416e8df5a6242e0291c2eae835.mp4" id="ips_uid_8348_20">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/16-ASaturaodaAlmofada.mp4.5b452a416e8df5a6242e0291c2eae835.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/16-ASaturaodaAlmofada.mp4.5b452a416e8df5a6242e0291c2eae835.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386214&amp;key=1cd87ea4e873430ba8181258fd7daf77">16 - A Saturação da Almofada.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386215" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/17-ADesconexodoExterminador.mp4.a3058a3988795028004018319e848e98.mp4" id="ips_uid_8348_21">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/17-ADesconexodoExterminador.mp4.a3058a3988795028004018319e848e98.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/17-ADesconexodoExterminador.mp4.a3058a3988795028004018319e848e98.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386215&amp;key=72a9e967a7f7b73e6674b86e9869ee64">17 - A Desconexão do Exterminador.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386216" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/18-ANanopartculadaMsicadeTrabalho.mp4.9c66bad17770887243cdbd4e402c4358.mp4" id="ips_uid_8348_22">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/18-ANanopartculadaMsicadeTrabalho.mp4.9c66bad17770887243cdbd4e402c4358.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/18-ANanopartculadaMsicadeTrabalho.mp4.9c66bad17770887243cdbd4e402c4358.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386216&amp;key=53d258ffc3150f3ca7e355dc3ef474de">18 - A Nanopartícula da Música de Trabalho.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386217" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/19-AJustaposiodaProstitutaMorta.mp4.d9280890ae368bc2e5636cd097528aa8.mp4" id="ips_uid_8348_23">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/19-AJustaposiodaProstitutaMorta.mp4.d9280890ae368bc2e5636cd097528aa8.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/19-AJustaposiodaProstitutaMorta.mp4.d9280890ae368bc2e5636cd097528aa8.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386217&amp;key=0ba5ba780e575c256b13be4467010fe7">19 - A Justaposição da Prostituta Morta.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386218" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/20-OIstopoHofstadter.mp4.d4ed02fb8674aeac78772cec7cf586b3.mp4" id="ips_uid_8348_24">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/20-OIstopoHofstadter.mp4.d4ed02fb8674aeac78772cec7cf586b3.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/20-OIstopoHofstadter.mp4.d4ed02fb8674aeac78772cec7cf586b3.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386218&amp;key=b4e933a6b8bb0ba5e7d85c199ad06f1b">20 - O Isótopo Hofstadter.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386219" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/21-ARenormalizaoLasVegas.mp4.c4a66f1a42b43ef6508c718a621b1d0e.mp4" id="ips_uid_8348_27">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/21-ARenormalizaoLasVegas.mp4.c4a66f1a42b43ef6508c718a621b1d0e.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/21-ARenormalizaoLasVegas.mp4.c4a66f1a42b43ef6508c718a621b1d0e.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386219&amp;key=c3b571bb8aaa99bfd6a49392bf20b941">21 - A Renormalização Las Vegas.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386220" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/22-ATurbulnciadosMateriaisConfidenciais.mp4.add556a813068556c6a4dd0a3f1d37b6.mp4" id="ips_uid_8348_25">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/22-ATurbulnciadosMateriaisConfidenciais.mp4.add556a813068556c6a4dd0a3f1d37b6.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/22-ATurbulnciadosMateriaisConfidenciais.mp4.add556a813068556c6a4dd0a3f1d37b6.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386220&amp;key=07f1e1a69188936d92c4131e8abdfa21">22 - A Turbulência dos Materiais Confidenciais.mp4</a>
-</video>
-<video controls="" class="ipsEmbeddedVideo" data-fileid="386221" data-video-embed="" src="https://eletronicabr.com/uploads/monthly_2023_10/23-AExpedioMonopolar.mp4.775ff861c889e30e3306a0787a8fa5b5.mp4" id="ips_uid_8348_26">
-	<source data-video-src="https://eletronicabr.com/uploads/monthly_2023_10/23-AExpedioMonopolar.mp4.775ff861c889e30e3306a0787a8fa5b5.mp4" type="video/mp4" src="https://eletronicabr.com/uploads/monthly_2023_10/23-AExpedioMonopolar.mp4.775ff861c889e30e3306a0787a8fa5b5.mp4">
-	<a class="ipsAttachLink" href="//eletronicabr.com/applications/core/interface/file/attachment.php?id=386221&amp;key=3dd7371afbf6ff309805ea42cb67f1bc">23 - A Expedição Monopolar.mp4</a>
-</video>
-
-
-			
-		</div>    ];
+      "https://eletronicabr.com/uploads/monthly_2023_10/1-OParadigmadoPeixePodre.mp4.13e366100e04fdc73adf80c10fbbf8e6.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/2-ATopologiadoAlapo.mp4.995004073d06923360d6c28792376f6d.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/3-ASublimaoBrbara.mp4.42f71f55f3d5908a5aa3d939b249b5a8.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/4-AEquivalnciadoGrifo.mp4.95243237038736cf705f5505afb3cbdb.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/5-AAlternativaEuclidiana.mp4.068a7964ad7fe1a70e8220a7150ad64c.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/6-OTeoremaCooper-Nowitzki.mp4.a41e19b5f90071411672d283f4d6149f.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/7-APolarizaodaPescariadeSuti.mp4.437136a372b83cb15c46919c2ced1953.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/8-AExpansodoLagarto-Spock.mp4.34010c538cba2edfd1a5a54ea7601612.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/9-ATriangulaodoAspargoBranco.mp4.3afdba87ca26466741688ffcb2e9ce72.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/10-OEnigmadeVartabedian.mp4.3936df04377e1f1d2a00b13352656a01.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/11-AHiptesedoKitdeBanhocomoPresente.mp4.77e7e31850a1d4701d0bf81147f9a0f8.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/12-AInstabilidadedoRobAssassino.mp4.55cf9c5da36f2a2dc3b9fb9322eb974e.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/13-OAlgoritmodaAmizade.mp4.cacb327bf17bce9a82d251d9e8d1f547.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/14-APermeabilidadeFinanceira.mp4.fb5719dded990ece2663733f2fa6b3da.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/15-ACapacitnciaMaternal.mp4.786e885799bef556b7777d77dae017f2.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/16-ASaturaodaAlmofada.mp4.5b452a416e8df5a6242e0291c2eae835.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/17-ADesconexodoExterminador.mp4.a3058a3988795028004018319e848e98.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/18-ANanopartculadaMsicadeTrabalho.mp4.9c66bad17770887243cdbd4e402c4358.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/19-AJustaposiodaProstitutaMorta.mp4.d9280890ae368bc2e5636cd097528aa8.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/20-OIstopoHofstadter.mp4.d4ed02fb8674aeac78772cec7cf586b3.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/21-ARenormalizaoLasVegas.mp4.c4a66f1a42b43ef6508c718a621b1d0e.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/22-ATurbulnciadosMateriaisConfidenciais.mp4.add556a813068556c6a4dd0a3f1d37b6.mp4",
+      "https://eletronicabr.com/uploads/monthly_2023_10/23-AExpedioMonopolar.mp4.775ff861c889e30e3306a0787a8fa5b5.mp4"
+    ];
 
     let index = 0;
     const player = document.getElementById("player");
-    const tempoTroca = 1380 * 1000; // 30 segundos
+    const tempoTroca = 30000; // 30 segundos
 
     function playNext() {
       player.src = videos[index];
