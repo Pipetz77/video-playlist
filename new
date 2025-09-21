@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist CMEUCNHCSM</title>
+</head>
+<body style="background:#111; color:white; font-family:sans-serif; text-align:center;">
+  <h1>🎬 Playlist CMEUCNHCSM</h1>
+  <h2 id="titulo"></h2>
+  
+  <iframe id="player" width="640" height="400" frameborder="0" scrolling="no" 
+          allow="encrypted-media" allowfullscreen></iframe>
+
+  <div style="margin-top:20px;">
+    <button onclick="anterior()">⏮️ Anterior</button>
+    <button onclick="proximo()">⏭️ Próximo</button>
+  </div>
+
+  <script>
+    const base = "//%72%65%64%65%63%61%6E%61%69%73%2E%73%68/player3/server.php?server=RCServer09&subfolder=ondemand&vid=";
+    const prefix = "CMEUCNHCSM";
+
+    // gera lista de vídeos (T01–T09 e EP01–EP24)
+    let videos = [];
+    for (let t = 1; t <= 9; t++) {
+      for (let e = 1; e <= 24; e++) {
+        let temporada = String(t).padStart(2, "0");
+        let episodio = String(e).padStart(2, "0");
+        let code = `${prefix}T${temporada}EP${episodio}`;
+        let titulo = `Temporada ${temporada} - Episódio ${episodio}`;
+        videos.push({code, titulo});
+      }
+    }
+
+    let index = 0; // começa no primeiro vídeo
+    const player = document.getElementById("player");
+    const titulo = document.getElementById("titulo");
+
+    function carregarVideo(i) {
+      if (i < 0) i = videos.length - 1;
+      if (i >= videos.length) i = 0;
+      index = i;
+      player.src = base + videos[index].code;
+      titulo.textContent = videos[index].titulo;
+    }
+
+    function proximo() {
+      carregarVideo(index + 1);
+    }
+
+    function anterior() {
+      carregarVideo(index - 1);
+    }
+
+    // inicia
+    carregarVideo(0);
+
+    // autoplay automático: troca a cada 25min (1500000 ms) — ajuste conforme duração média dos episódios
+    setInterval(proximo, 1500000);
+  </script>
+</body>
+</html>
